@@ -37,7 +37,7 @@ void setup() {
   WiFi.mode(WIFI_AP);
   //  Serial.print("wifi status = ");
   //  Serial.println(WiFi.status());
-  WiFi.softAP("think_13", "zzzzzzzz");
+  WiFi.softAP("iot_smart_ocean_master", "");
   //  WiFi.begin(ssid, password);
   IPAddress myIP = WiFi.softAPIP();
   mySerial.begin(9600);
@@ -93,7 +93,7 @@ void loop() {
           char receive_data = serverClients[i].read();
           Serial.write(receive_data);
           mySerial.write(receive_data);
-          a[count++] = receive_data;
+//          a[count++] = receive_data;
         }
         for (i = 0; i < MAX_SRV_CLIENTS; i++) {
           if (serverClients[i] && serverClients[i].connected()) {
